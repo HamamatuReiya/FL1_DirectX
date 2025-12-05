@@ -19,13 +19,13 @@ public:
 
 private:
 	Input* input_ = nullptr;
-	Model* model_ = nullptr;
 
 	WorldTransform worldTransform_;
 
 	Vector2 position_ = {0, 0};
 	Vector2 size_ = {96, 96};
 
+	Model* model_ = nullptr;
 	Sprite* playerSprite_ = nullptr;
 	uint32_t textureHandle_ = 0u;
 	Player* player_ = nullptr;
