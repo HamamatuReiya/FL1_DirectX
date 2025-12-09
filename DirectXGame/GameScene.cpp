@@ -11,7 +11,7 @@ void GameScene::Initialize() {
 
 	player_ = new Player();
 	playerTestModel_ = Model::Create();
-	playerTexture_ = TextureManager::Load("Resources/uvChecker.png");
+	//playerTexture_ = TextureManager::Load("Resources/uvChecker.png");
 	player_->Initialize(playerTexture_);
 }
 

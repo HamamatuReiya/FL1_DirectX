@@ -23,7 +23,7 @@ private:
 	WorldTransform worldTransform_;
 
 	Vector2 position_ = {0, 0};
-	Vector2 size_ = {96, 96};
+	Vector2 size_ = {50, 50};
 
 	Model* model_ = nullptr;
 	Sprite* playerSprite_ = nullptr;
