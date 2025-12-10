@@ -24,9 +24,8 @@ void GameScene::Update() {
 	if (input_->TriggerKey(DIK_SPACE)) {
 		isPlaySceneEnd = true;
 	}
-
+	player_->Update();
 }
-void GameScene::Update() { player_->Update(); }
 
 void GameScene::Draw() {
 	playSprite->Draw();

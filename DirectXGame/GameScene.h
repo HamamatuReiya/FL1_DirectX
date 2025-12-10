@@ -3,7 +3,6 @@
 #include "Scene.h"
 using namespace KamataEngine;
 #include "Player.h"
-#include <KamataEngine.h>
 
 using namespace KamataEngine;
 
@@ -33,10 +32,6 @@ private:
 	Sprite* playSprite = nullptr;
 	// シーンリセット
 	void SceneReset();
-
-private:
-	DirectXCommon* dxCommon_ = nullptr;
-	Input* input_ = nullptr;
 	Audio* audio_ = nullptr;
 	std::unique_ptr<Model> model_ = nullptr;
 
