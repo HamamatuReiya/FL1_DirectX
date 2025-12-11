@@ -14,9 +14,10 @@ void GameScene::Initialize() {
 	uint32_t gameSprite = TextureManager::Load("Game.png");
 	playSprite = Sprite::Create(gameSprite, { 0.0f, 0.0f }, { 1.0f, 1.0f, 1.0f, 1.0f }, { 0.0f, 0.0f });
 	isPlaySceneEnd = false;
+
 	player_ = new Player();
 	playerTestModel_ = Model::Create();
-	//playerTexture_ = TextureManager::Load("Resources/uvChecker.png");
+	playerTexture_ = TextureManager::Load("uvChecker.png");
 	player_->Initialize(playerTexture_);
 }
 
@@ -28,7 +29,6 @@ void GameScene::Update() {
 }
 
 void GameScene::Draw() {
-	playSprite->Draw();
 	// コマンドリストの取得
 	ID3D12GraphicsCommandList* commandList = dxCommon_->GetCommandList();
 
@@ -39,7 +39,7 @@ void GameScene::Draw() {
 	/// <summary>
 	/// ここに背景スプライトの描画処理を追加できる
 
-
+	playSprite->Draw();
 	
 	/// </summary>
 

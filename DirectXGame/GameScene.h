@@ -1,8 +1,7 @@
 #pragma once
-#include "KamataEngine.h"
-#include "Scene.h"
-using namespace KamataEngine;
 #include "Player.h"
+#include "Scene.h"
+#include <KamataEngine.h>
 
 using namespace KamataEngine;
 
@@ -29,10 +28,10 @@ public:
 private:
 	DirectXCommon* dxCommon_ = nullptr;
 	Input* input_ = nullptr;
+	Audio* audio_ = nullptr;
 	Sprite* playSprite = nullptr;
 	// シーンリセット
 	void SceneReset();
-	Audio* audio_ = nullptr;
 	std::unique_ptr<Model> model_ = nullptr;
 
 	// プレイヤー
