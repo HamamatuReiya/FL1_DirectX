@@ -69,6 +69,7 @@ void GameScene::Draw() {
 	/// <summary>
 	/// ここに前景スプライトの描画処理を追加できる
 	
+	conveyer_->Draw();
 	player_->Draw();
 
 	/// </summary>

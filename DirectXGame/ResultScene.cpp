@@ -7,7 +7,6 @@ void ResultScene::Initialize() {
 
 	isResultSceneEnd = false;
 
-
 }
 
 void ResultScene::Update() {
