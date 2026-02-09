@@ -23,6 +23,11 @@ void GameScene::Initialize() {
 	playerTexture_ = TextureManager::Load("uvChecker.png");
 	player_->Initialize(playerTexture_);
 
+	// Goal
+	goalTexture_ = TextureManager::Load("goal.png"); // 任意のゴール画像
+	goal_ = new Goal();
+	goal_->Initialize(goalTexture_, {600, 360}); // 位置は自由
+
 	conveyer_->Initialize();
 }
 
@@ -31,6 +36,24 @@ void GameScene::Update() {
 		isPlaySceneEnd = true;
 	}
 	player_->Update();
+
+
+	// Goal
+	// プレイヤーとゴールの当たり判定
+	Vector2 pPos = player_->GetPos();
+	Vector2 pSize = player_->GetSize();
+
+	Vector2 gPos = goal_->GetPos();
+	Vector2 gSize = goal_->GetSize();
+
+	// AABB collision
+	bool hit = (pPos.x < gPos.x + gSize.x) && (pPos.x + pSize.x > gPos.x) && (pPos.y < gPos.y + gSize.y) && (pPos.y + pSize.y > gPos.y);
+
+	if (hit) {
+		isPlaySceneEnd = true;
+	}
+
+
 }
 
 void GameScene::Draw() {
@@ -46,6 +69,9 @@ void GameScene::Draw() {
 
 	playSprite->Draw();
 	
+	// Goal
+	goal_->Draw();
+
 	/// </summary>
 
 	// スプライト描画後処理

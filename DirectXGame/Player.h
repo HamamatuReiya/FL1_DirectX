@@ -16,6 +16,10 @@ public:
 	void Update();
 	// 描画
 	void Draw();
+	
+	// Goal
+	Vector2 GetPos() { return position_; }
+	Vector2 GetSize() { return size_; }
 
 private:
 	Input* input_ = nullptr;
@@ -29,4 +33,5 @@ private:
 	Sprite* playerSprite_ = nullptr;
 	uint32_t textureHandle_ = 0u;
 	Player* player_ = nullptr;
+
 };

@@ -3,6 +3,7 @@
 #include "Scene.h"
 #include "Conveyer.h"
 #include <KamataEngine.h>
+#include "Goal.h"
 
 using namespace KamataEngine;
 
@@ -41,6 +42,10 @@ private:
 	Model* playerTestModel_ = nullptr;
 	// プレイヤーテスト用テクスチャー
 	uint32_t playerTexture_ = 0;
+
+	// Goal
+	Goal* goal_ = nullptr;
+	uint32_t goalTexture_ = 0;
 
 	Conveyer* conveyer_ = nullptr;
 };
