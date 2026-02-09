@@ -8,6 +8,7 @@ void Conveyer::Initialize(
 	uint32_t downtextureHandle3, Vector2 downpos3,
 	uint32_t lefttextureHandle, Vector2 leftpos,
 	uint32_t lefttextureHandle2, Vector2 leftpos2,
+    uint32_t lefttextureHandle3, Vector2 leftpos3,
     uint32_t righttextureHandle, Vector2 rightpos,
 	uint32_t righttextureHandle2, Vector2 rightpos2)
 {
@@ -51,6 +52,11 @@ void Conveyer::Initialize(
 	    lefttextureHandle2, {position_.x, position_.y}, {1.0f, 1.0f, 1.0f, 1.0f}, // 色
 	    {1.0f, 1.0f}                                                             // アンカーポイント
 	);
+	position_ = leftpos3;
+	leftSprite3_ = Sprite::Create(
+	    lefttextureHandle3, {position_.x, position_.y}, {1.0f, 1.0f, 1.0f, 1.0f}, // 色
+	    {1.0f, 1.0f}                                                              // アンカーポイント
+	);
 	position_ = rightpos;
 	rightSprite_ = Sprite::Create(
 	    righttextureHandle, {position_.x, position_.y}, {1.0f, 1.0f, 1.0f, 1.0f}, // 色
@@ -69,6 +75,7 @@ void Conveyer::Initialize(
 	downSprite3_->SetSize(size_);
 	leftSprite_->SetSize(size_);
 	leftSprite2_->SetSize(size_);
+	leftSprite3_->SetSize(size_);
 	rightSprite_->SetSize(size_);
 	rightSprite2_->SetSize(size_);
 	
@@ -106,6 +113,7 @@ void Conveyer::Update(Player* player) {
 	// 左コンベア
 	check(leftSprite_, {-1.0f, 0.0f});
 	check(leftSprite2_, {-1.0f, 0.0f});
+	check(leftSprite3_, {-1.0f, 0.0f});
 
 	// 右コンベア
 	check(rightSprite_, {1.0f, 0.0f});
@@ -138,6 +146,9 @@ void Conveyer::Draw() {
 	}
 	if (leftSprite2_) {
 		leftSprite2_->Draw();
+	}
+	if (leftSprite3_) {
+		leftSprite3_->Draw();
 	}
 
 	if (rightSprite_) {

@@ -14,6 +14,7 @@ public:
 		uint32_t downtextureHandle3, Vector2 downpos3,
 		uint32_t lefttextureHandle, Vector2 leftpos, 
 		uint32_t lefttextureHandle2, Vector2 leftpos2,
+	    uint32_t lefttextureHandle3, Vector2 leftpos3,
 		uint32_t righttextureHandle, Vector2 rightpos,
 		uint32_t righttextureHandle2, Vector2 rightpos2);
 	// 更新処理
@@ -40,6 +41,7 @@ private:
 
 	Sprite* leftSprite_ = nullptr;
 	Sprite* leftSprite2_ = nullptr;
+	Sprite* leftSprite3_ = nullptr;
 
 	Sprite* rightSprite_ = nullptr;
 	Sprite* rightSprite2_ = nullptr;

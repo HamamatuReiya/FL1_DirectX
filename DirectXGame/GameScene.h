@@ -58,6 +58,7 @@ private:
 	uint32_t downTexture3_ = 0;
 	uint32_t leftTexture_ = 0;
 	uint32_t leftTexture2_ = 0;
+	uint32_t leftTexture3_ = 0;
 	uint32_t rightTexture_ = 0;
 	uint32_t rightTexture2_ = 0;
 

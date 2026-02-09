@@ -8,34 +8,36 @@ void Player::Initialize(uint32_t textureHandle) {
 	playerSprite_->SetSize(size_);
 	position_ = {300, 360};
 	worldTransform_.Initialize();
-
+	isConveyer_ = false;
 }
 
 void Player::Update() {
 	const float kMoveSpeed = 3.0f;
-	if (input_->PushKey(DIK_W)) {
-		position_.y -= kMoveSpeed;
-	}
-	if (input_->PushKey(DIK_S)) {
-		position_.y += kMoveSpeed;
-	}
-	if (input_->PushKey(DIK_A)) {
-		position_.x -= kMoveSpeed;
-	}
-	if (input_->PushKey(DIK_D)) {
-		position_.x += kMoveSpeed;
-	}
-	if (position_.x <= size_.x / 2) {
-		position_.x = size_.x / 2;
-	}
-	if (position_.x >= 1280 - size_.x / 2) {
-		position_.x = 1280 - size_.x / 2;
-	}
-	if (position_.y <= size_.x / 2) {
-		position_.y = size_.x / 2;
-	}
-	if (position_.y >= 720 - size_.x / 2) {
-		position_.y = 720 - size_.x / 2;
+	if (isConveyer_ == false) {
+		if (input_->PushKey(DIK_W)) {
+			position_.y -= kMoveSpeed;
+		}
+		if (input_->PushKey(DIK_S)) {
+			position_.y += kMoveSpeed;
+		}
+		if (input_->PushKey(DIK_A)) {
+			position_.x -= kMoveSpeed;
+		}
+		if (input_->PushKey(DIK_D)) {
+			position_.x += kMoveSpeed;
+		}
+		if (position_.x <= size_.x / 2) {
+			position_.x = size_.x / 2;
+		}
+		if (position_.x >= 1280 - size_.x / 2) {
+			position_.x = 1280 - size_.x / 2;
+		}
+		if (position_.y <= size_.x / 2) {
+			position_.y = size_.x / 2;
+		}
+		if (position_.y >= 720 - size_.x / 2) {
+			position_.y = 720 - size_.x / 2;
+		}
 	}
 	playerSprite_->SetPosition({position_.x - 50.0f, position_.y - 50.0f});
 }
@@ -45,6 +47,7 @@ void Player::Draw() {
 }
 
 void Player::AddPos(const Vector2& add) {
+	isConveyer_ = true;
 	position_.x += add.x;
 	position_.y += add.y;
 }

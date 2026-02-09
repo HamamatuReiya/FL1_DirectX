@@ -37,6 +37,7 @@ void GameScene::Initialize() {
 	downTexture3_ = TextureManager::Load("down.png");
 	leftTexture_ = TextureManager::Load("left.png");
 	leftTexture2_ = TextureManager::Load("left.png");
+	leftTexture3_ = TextureManager::Load("left.png");
 	rightTexture_ = TextureManager::Load("right.png");
 	rightTexture2_ = TextureManager::Load("right.png");
 	conveyer_ = new Conveyer();
@@ -48,7 +49,8 @@ void GameScene::Initialize() {
 		downTexture_, {700, 350},
 		downTexture_, {700, 400},
 		leftTexture_, {750, 300},
-		leftTexture2_, {800, 300},
+		leftTexture2_, {800, 300}, 
+		leftTexture3_, {850, 300},
 		rightTexture_, {750, 450},
 		rightTexture2_, {700, 450}
 	);
@@ -57,7 +59,7 @@ void GameScene::Initialize() {
 
 void GameScene::Update() {
 	if (input_->TriggerKey(DIK_SPACE)) {
-		isPlaySceneEnd = true;
+		//isPlaySceneEnd = true;
 	}
 	player_->Update();
 
