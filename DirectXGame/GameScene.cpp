@@ -26,15 +26,32 @@ void GameScene::Initialize() {
 	// Goal
 	goalTexture_ = TextureManager::Load("goal.png"); // 任意のゴール画像
 	goal_ = new Goal();
-	goal_->Initialize(goalTexture_, {600, 350}); // 位置は自由
+	goal_->Initialize(goalTexture_, {800, 350}); // 位置は自由
 
 	//conveyer
 	upTexture_ = TextureManager::Load("up.png");
+	upTexture2_ = TextureManager::Load("up.png");
+	upTexture3_ = TextureManager::Load("up.png");
 	downTexture_ = TextureManager::Load("down.png");
+	downTexture2_ = TextureManager::Load("down.png");
+	downTexture3_ = TextureManager::Load("down.png");
 	leftTexture_ = TextureManager::Load("left.png");
+	leftTexture2_ = TextureManager::Load("left.png");
 	rightTexture_ = TextureManager::Load("right.png");
+	rightTexture2_ = TextureManager::Load("right.png");
 	conveyer_ = new Conveyer();
-	conveyer_->Initialize(upTexture_, {600, 400}, downTexture_, {650, 400}, leftTexture_, {700, 400}, rightTexture_, {750, 400});
+	conveyer_->Initialize(
+		upTexture_, {800, 400},
+		upTexture2_, {800, 450},
+		upTexture3_, {850, 350},
+		downTexture_, {700, 300},
+		downTexture_, {700, 350},
+		downTexture_, {700, 400},
+		leftTexture_, {750, 300},
+		leftTexture2_, {800, 300},
+		rightTexture_, {750, 450},
+		rightTexture2_, {700, 450}
+	);
 
 }
 
