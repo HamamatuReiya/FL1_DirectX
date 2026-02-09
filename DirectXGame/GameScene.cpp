@@ -28,7 +28,7 @@ void GameScene::Initialize() {
 	goal_ = new Goal();
 	goal_->Initialize(goalTexture_, {600, 360}); // 位置は自由
 
-	conveyer_->Initialize();
+	//conveyer_->Initialize();
 }
 
 void GameScene::Update() {
