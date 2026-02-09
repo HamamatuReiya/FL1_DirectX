@@ -20,15 +20,22 @@ void GameScene::Initialize() {
 
 	player_ = new Player();
 	playerTestModel_ = Model::Create();
-	playerTexture_ = TextureManager::Load("uvChecker.png");
+	playerTexture_ = TextureManager::Load("player.png");
 	player_->Initialize(playerTexture_);
 
 	// Goal
 	goalTexture_ = TextureManager::Load("goal.png"); // 任意のゴール画像
 	goal_ = new Goal();
-	goal_->Initialize(goalTexture_, {600, 360}); // 位置は自由
+	goal_->Initialize(goalTexture_, {600, 350}); // 位置は自由
 
-	//conveyer_->Initialize();
+	//conveyer
+	upTexture_ = TextureManager::Load("up.png");
+	downTexture_ = TextureManager::Load("down.png");
+	leftTexture_ = TextureManager::Load("left.png");
+	rightTexture_ = TextureManager::Load("right.png");
+	conveyer_ = new Conveyer();
+	conveyer_->Initialize(upTexture_, {600, 400}, downTexture_, {650, 400}, leftTexture_, {700, 400}, rightTexture_, {750, 400});
+
 }
 
 void GameScene::Update() {

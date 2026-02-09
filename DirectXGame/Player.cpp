@@ -36,7 +36,7 @@ void Player::Update() {
 	if (position_.y >= 720 - size_.x / 2) {
 		position_.y = 720 - size_.x / 2;
 	}
-	playerSprite_->SetPosition({position_.x - 48.0f, position_.y - 48.0f});
+	playerSprite_->SetPosition({position_.x - 50.0f, position_.y - 50.0f});
 }
 
 void Player::Draw() { 

@@ -47,5 +47,10 @@ private:
 	Goal* goal_ = nullptr;
 	uint32_t goalTexture_ = 0;
 
+	// Conveyer
 	Conveyer* conveyer_ = nullptr;
+	uint32_t upTexture_ = 0;
+	uint32_t downTexture_ = 0;
+	uint32_t rightTexture_ = 0;
+	uint32_t leftTexture_ = 0;
 };
