@@ -8,6 +8,7 @@ void Player::Initialize(uint32_t textureHandle) {
 	playerSprite_->SetSize(size_);
 	position_ = {300, 360};
 	worldTransform_.Initialize();
+
 }
 
 void Player::Update() {

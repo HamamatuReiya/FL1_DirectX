@@ -12,6 +12,8 @@ public:
 	void Update();
 	//描画
 	void Draw();
+	// シーンリセット
+	void SceneReset();
 
 	//シーン切り替え用
 	bool isTitleSceneEnd = false;
@@ -21,6 +23,14 @@ public:
 private:
 	DirectXCommon* dxCommon_ = nullptr;
 	Input* input_ = nullptr;
-	Sprite* titleScene = nullptr;
+	Audio* audio_ = nullptr;
+
+	Sprite* titleScene_ = nullptr;
+	Sprite* tutorial_ = nullptr;
+	bool isTutorial_ = false;
+
+	// 音
+	uint32_t gameBgmHandle_;
+	uint32_t playGameBgm_;
 };
 

@@ -33,5 +33,4 @@ private:
 	Sprite* playerSprite_ = nullptr;
 	uint32_t textureHandle_ = 0u;
 	Player* player_ = nullptr;
-
 };

@@ -21,6 +21,8 @@ public:
 	void Update();
 	// 描画
 	void Draw();
+	// シーンリセット
+	void SceneReset();
 
 	//シーン切り替え用
 	bool isPlaySceneEnd = false;
@@ -32,8 +34,7 @@ private:
 	Input* input_ = nullptr;
 	Audio* audio_ = nullptr;
 	Sprite* playSprite = nullptr;
-	// シーンリセット
-	void SceneReset();
+	
 	std::unique_ptr<Model> model_ = nullptr;
 
 	// プレイヤー

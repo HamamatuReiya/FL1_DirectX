@@ -29,6 +29,7 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
 	ResultScene* resultScene = new ResultScene();
 	resultScene->Initialize();
 
+
 	//メインループ
 	while (true) {
 		// エンジンの更新
@@ -59,7 +60,7 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
 			if (resultScene->IsResultEnd()) {
 				//次のシーンの値を代入してシーン切り替え
 				sceneNo = resultScene->NextScene();
-				titleScene->Initialize();
+				titleScene->SceneReset();
 			}
 			break;
 		}
