@@ -42,4 +42,9 @@ void Player::Update() {
 
 void Player::Draw() { 
 	playerSprite_->Draw();
-	}
+}
+
+void Player::AddPos(const Vector2& add) {
+	position_.x += add.x;
+	position_.y += add.y;
+}

@@ -73,9 +73,45 @@ void Conveyer::Initialize(
 	rightSprite2_->SetSize(size_);
 	
 }
-void Conveyer::Update() {
+void Conveyer::Update(Player* player) {
 
+	Vector2 pPos = player->GetPos();
+	Vector2 pSize = player->GetSize();
+
+	// 共通当たり判定
+	auto check = [&](Sprite* s, Vector2 move) {
+		if (!s)
+			return;
+
+		Vector2 cPos = s->GetPosition();
+
+		bool hit = (pPos.x < cPos.x + size_.x) && (pPos.x + pSize.x > cPos.x) && (pPos.y < cPos.y + size_.y) && (pPos.y + pSize.y > cPos.y);
+
+		// 乗っている間ずっと移動
+		if (hit) {
+			player->AddPos(move);
+		}
+	};
+
+	// 上コンベア
+	check(upSprite_, {0.0f, -1.0f});
+	check(upSprite2_, {0.0f, -1.0f});
+	check(upSprite3_, {0.0f, -1.0f});
+
+	// 下コンベア
+	check(downSprite_, {0.0f, 1.0f});
+	check(downSprite2_, {0.0f, 1.0f});
+	check(downSprite3_, {0.0f, 1.0f});
+
+	// 左コンベア
+	check(leftSprite_, {-1.0f, 0.0f});
+	check(leftSprite2_, {-1.0f, 0.0f});
+
+	// 右コンベア
+	check(rightSprite_, {1.0f, 0.0f});
+	check(rightSprite2_, {1.0f, 0.0f});
 }
+
 void Conveyer::Draw() { 
 	if (upSprite_) {
 		upSprite_->Draw();

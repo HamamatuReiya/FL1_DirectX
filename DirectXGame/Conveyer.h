@@ -1,5 +1,6 @@
 #pragma once
 #include <KamataEngine.h>
+#include "Player.h"
 using namespace KamataEngine;
 class Conveyer {
 public:
@@ -16,7 +17,7 @@ public:
 		uint32_t righttextureHandle, Vector2 rightpos,
 		uint32_t righttextureHandle2, Vector2 rightpos2);
 	// 更新処理
-	void Update();
+	void Update(Player* player);
 	// 描画
 	void Draw();
 

@@ -21,6 +21,8 @@ public:
 	Vector2 GetPos() { return position_; }
 	Vector2 GetSize() { return size_; }
 
+	void AddPos(const Vector2& add);
+
 private:
 	Input* input_ = nullptr;
 

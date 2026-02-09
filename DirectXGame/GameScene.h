@@ -60,4 +60,10 @@ private:
 	uint32_t leftTexture2_ = 0;
 	uint32_t rightTexture_ = 0;
 	uint32_t rightTexture2_ = 0;
+
+	// 追加
+	Sprite* upSprite_ = nullptr;
+	Sprite* downSprite_ = nullptr;
+	Sprite* rightSprite_ = nullptr;
+	Sprite* leftSprite_ = nullptr;
 };

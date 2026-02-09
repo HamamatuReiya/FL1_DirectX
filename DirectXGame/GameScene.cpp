@@ -76,7 +76,8 @@ void GameScene::Update() {
 	if (hit) {
 		isPlaySceneEnd = true;
 	}
-
+	// コンベア処理
+	conveyer_->Update(player_);
 
 }
 
