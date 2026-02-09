@@ -2,7 +2,10 @@
 
 GameScene::GameScene() {}
 
-GameScene::~GameScene() { delete player_; }
+GameScene::~GameScene() { 
+	delete player_;
+	delete conveyer_;
+}
 
 void GameScene::Initialize() {
 	input_ = KamataEngine::Input::GetInstance();
@@ -19,6 +22,8 @@ void GameScene::Initialize() {
 	playerTestModel_ = Model::Create();
 	playerTexture_ = TextureManager::Load("uvChecker.png");
 	player_->Initialize(playerTexture_);
+
+	conveyer_->Initialize();
 }
 
 void GameScene::Update() {

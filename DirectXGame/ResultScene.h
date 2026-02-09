@@ -5,7 +5,6 @@ using namespace KamataEngine;
 class ResultScene
 {
 public:
-
 	//初期化
 	void Initialize();
 	//更新処理
